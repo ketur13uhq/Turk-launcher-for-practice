@@ -78,6 +78,27 @@ EDITEURS_IOS = ("EDITEURS", JAUNE, {
     "iSH Shell": "https://apps.apple.com/app/ish-shell/id1436902243",
 })
 
+EDITEURS_WINDOWS = ("EDITEURS", JAUNE, {
+    "VS Code": "https://code.visualstudio.com",
+    "PyCharm Community": "https://www.jetbrains.com/pycharm/download",
+    "Python (installer officiel)": "https://www.python.org/downloads/",
+    "Notepad++": "https://notepad-plus-plus.org",
+})
+
+EDITEURS_LINUX = ("EDITEURS", JAUNE, {
+    "VS Code": "https://code.visualstudio.com",
+    "PyCharm Community": "https://www.jetbrains.com/pycharm/download",
+    "Terminal (deja inclus)": "https://docs.python.org/3/",
+    "Vim/Neovim": "https://neovim.io",
+})
+
+EDITEURS_MACOS = ("EDITEURS", JAUNE, {
+    "VS Code": "https://code.visualstudio.com",
+    "PyCharm Community": "https://www.jetbrains.com/pycharm/download",
+    "Python (installer officiel)": "https://www.python.org/downloads/",
+    "Xcode (dev Apple)": "https://apps.apple.com/app/xcode/id497799835",
+})
+
 
 def clear():
     # os.system('clear') et les codes ANSI ne marchent pas sur tous les
@@ -126,7 +147,7 @@ def afficher_page_aide():
     print(JAUNE + "LES CATEGORIES" + RESET)
     print()
     print("- ASSISTANT IA : les IA conversationnelles (Claude, ChatGPT...)")
-    print("- EDITEURS : les applis pour coder sur ton telephone")
+    print("- EDITEURS : les applis/logiciels pour coder selon ton systeme")
     print("- APPRENDRE A CODER : des sites gratuits pour debuter")
     print("- APPRENDRE PYTHON : des sites 100% centres sur le Python")
     print("- DOCUMENTATION : ou chercher quand t'es bloque sur du code")
@@ -164,12 +185,21 @@ def choisir_os():
     print("Tu es sur quel systeme ?")
     print("[1] Android")
     print("[2] iOS")
+    print("[3] Windows")
+    print("[4] Linux")
+    print("[5] macOS")
     while True:
         choix = input(">> ").strip()
         if choix == '1':
             return EDITEURS_ANDROID
         elif choix == '2':
             return EDITEURS_IOS
+        elif choix == '3':
+            return EDITEURS_WINDOWS
+        elif choix == '4':
+            return EDITEURS_LINUX
+        elif choix == '5':
+            return EDITEURS_MACOS
         print("wsh t'es dyslexique ou quoi mdr")
 
 
